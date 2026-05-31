@@ -133,9 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (chatMessages.contains(loadingDiv)) {
                 chatMessages.removeChild(loadingDiv);
             }
-            addMessage(`Error: ${error.message}. Please check your API key or try again.`, false);
+            addMessage(`Error: ${error.message}`, false);
 
-            if(error.message.includes("API Key")) {
+            if(error.message.toLowerCase().includes("api key")) {
                  apiKeyModal.classList.remove('hidden');
                  localStorage.removeItem('gemini_api_key');
                  apiKey = '';
