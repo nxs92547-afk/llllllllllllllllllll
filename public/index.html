@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Game Developer Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="api-key-modal" class="modal">
+        <div class="modal-content">
+            <h2>Welcome to Game Dev Assistant</h2>
+            <p>Please enter your Google Gemini API Key to start.</p>
+            <input type="password" id="api-key-input" placeholder="Enter Gemini API Key">
+            <button id="save-api-key-btn">Save & Start</button>
+            <p class="small-text">Your key is only stored locally in your browser and used to communicate with the API.</p>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <!-- Left Side: Chat Interface -->
+        <div class="chat-section">
+            <div class="chat-header">
+                <h2><i class="fas fa-robot"></i> Game Dev Assistant</h2>
+                <button id="clear-chat-btn" title="Clear Chat"><i class="fas fa-trash"></i></button>
+            </div>
+
+            <div id="chat-messages" class="chat-messages">
+                <div class="message assistant-message">
+                    <div class="message-content">Hello! I'm your HTML Game Developer Assistant. What kind of game do you want to build today?</div>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <textarea id="user-input" placeholder="Describe the game you want to create or ask for changes..."></textarea>
+                <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <!-- Right Side: Game Preview -->
+        <div class="preview-section">
+            <div class="preview-header">
+                <h2><i class="fas fa-gamepad"></i> Live Game Preview</h2>
+                <button id="refresh-preview-btn" title="Refresh Preview"><i class="fas fa-sync-alt"></i></button>
+            </div>
+            <div class="iframe-container">
+                <iframe id="game-preview" sandbox="allow-scripts allow-same-origin allow-modals"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
